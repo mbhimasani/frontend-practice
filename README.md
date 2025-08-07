@@ -14,9 +14,11 @@ The exercises range from:
 ## 🛠 Tech Stack
 
 ### Current Stack
+- **Runtime**: Node.js v18+ (recommended: v20 LTS)
+- **Package Manager**: npm (can use yarn or pnpm)
 - **Framework**: Next.js 15.4.5 with App Router
-- **Language**: TypeScript 5
-- **Frontend**: React 19.1.0
+- **Language**: TypeScript 5 (strict mode)
+- **Frontend**: React 19.1.0 with React Server Components
 - **Styling**: Tailwind CSS v4
 - **Code Quality**: ESLint with Next.js configuration
 
@@ -28,12 +30,14 @@ The exercises range from:
 - **Testing**: Jest and React Testing Library
 - **State Management**: Zustand and TanStack React Query
 - **UI Components**: Shadcn UI and Radix UI
+- **Database**: Prisma ORM with PostgreSQL
+- **Authentication**: NextAuth.js v5
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
+- Node.js v18+ (recommended: v20 LTS)
+- npm, yarn, or pnpm
 
 ### Installation
 1. Clone the repository:
@@ -100,12 +104,26 @@ Each coding exercise should be organized as follows:
 - **Performance**: Optimize for Core Web Vitals and accessibility
 
 ### File Naming Conventions
-- **Directories**: `kebab-case` (e.g., `user-authentication`)
-- **Components**: `PascalCase` (e.g., `UserProfile.tsx`)
-- **Utilities**: `camelCase` (e.g., `formatDate.ts`)
+
+#### Next.js App Router Structure
+- **Route folders**: `kebab-case` (e.g., `user-profile`, `todo-list`)
+- **Special files**: Next.js conventions
+  - `page.tsx` - Route pages
+  - `layout.tsx` - Shared layouts
+  - `loading.tsx` - Loading UI
+  - `error.tsx` - Error UI
+  - `not-found.tsx` - 404 pages
+  - `route.ts` - API routes
+
+#### Components and Files
+- **React Components**: `PascalCase.tsx` (e.g., `UserProfile.tsx`, `TodoItem.tsx`)
+- **Utility functions**: `camelCase.ts` (e.g., `formatDate.ts`, `validateEmail.ts`)
+- **Type definitions**: `camelCase.types.ts` (e.g., `user.types.ts`)
+- **Constants**: `UPPER_SNAKE_CASE.ts` (e.g., `API_ENDPOINTS.ts`)
+- **Hooks**: `use` prefix with `camelCase` (e.g., `useLocalStorage.ts`)
 
 ### Adding New Exercises
-1. Create a new folder under `src/` with a descriptive name
+1. Create a new folder under `src/app/` with a descriptive name
 2. Include a README.md explaining the exercise requirements
 3. Implement the solution following the established patterns
 4. Add any necessary routes to the Next.js app router
