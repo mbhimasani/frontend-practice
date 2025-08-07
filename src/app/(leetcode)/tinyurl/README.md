@@ -32,3 +32,19 @@ Constraints:
 - `url` is guranteed to be a valid URL.
 
 Source: https://leetcode.com/problems/encode-and-decode-tinyurl
+
+<!-- 
+Implementation notes:
+- FE:
+  - text field for users to input url to encode/decode
+  - 'encode' button
+  - 'decode' button
+  - surface decoded/encoded url
+  - display message if unable to encode/decode url
+- BE:
+  - return encoded url
+  - return decoded url
+  - return error if unable to encode/decode url
+- Base62 will be used for encode/decode
+- ideally we want to spin up a db that will store the id, short url and long url, and encode the row ID but I'm going to simulate this instead by storing those values in a dictionary in the Solution class 
+-->
