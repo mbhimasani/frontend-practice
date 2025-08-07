@@ -1,0 +1,13 @@
+.common {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.common:focus {
+  outline: none;
+  border-color: #007bff;
+}
