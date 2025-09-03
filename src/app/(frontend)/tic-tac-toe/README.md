@@ -16,3 +16,18 @@ Create a single-screen app that contains a simple implementation of Tic-Tac-Toe.
 * When a win state has been found, the board is disabled and the winner is declared in the info text.  
 * If the board is filled and no win state has been found, the board is disabled and the tie is declared in the info text.  
 * When the "Reset" button is tapped, the board is reset to an empty state. 
+
+<!-- 
+Developer Plan
+React SPA - front end only challenge; most familiar with React framework
+
+Core functionality:
+- create empty board
+- get current board state
+- reset game
+- make a move
+  - stop game if move is a winning move (player wins)
+  - stop game if board is full (draw)
+  - toggle turn state
+- get game result 
+-->
