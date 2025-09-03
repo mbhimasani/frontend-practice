@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "TS_NODE_PROJECT=test/tsconfig.json mocha",
+    "test:unit": "TS_NODE_PROJECT=test/tsconfig.json mocha",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:all": "npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.84.1",
@@ -18,15 +24,21 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.55.0",
     "@tailwindcss/postcss": "^4",
     "@tanstack/eslint-plugin-query": "^5.83.1",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chai": "^6.0.1",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
+    "mocha": "^11.7.2",
     "postcss-modules": "^6.0.1",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

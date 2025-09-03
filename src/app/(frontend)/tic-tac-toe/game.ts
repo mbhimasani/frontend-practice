@@ -46,7 +46,7 @@ export class TicTacToeGame {
   
   // player makes a move, return true if move is successful, else return false
   makeMove(row: number, col: number) {
-    if (!this.isValidPosition(row, col) || this.board[row][col] !== null) {
+    if (this.gameState.state !== 'playing' || !this.isValidPosition(row, col) || this.board[row][col] !== null) {
       return false;
     }
 
