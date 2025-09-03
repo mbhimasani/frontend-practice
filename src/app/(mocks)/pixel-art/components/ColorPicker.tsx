@@ -1,4 +1,4 @@
-import { Color, COLORS } from "../types/colors";
+import { Color, COLORS } from "../types";
 
 type ColorPickerProps = {
   selectedColor: Color;

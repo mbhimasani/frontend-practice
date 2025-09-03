@@ -13,3 +13,9 @@ export const COLORS = {
 };
 
 export type Color = keyof typeof COLORS;
+
+export const MODES = {
+  draw: 'Draw',
+  erase: 'Erase',
+};
+export type Mode = keyof typeof MODES;

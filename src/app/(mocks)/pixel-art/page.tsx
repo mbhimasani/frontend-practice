@@ -1,18 +1,24 @@
 'use client'
 
 import { useState } from "react";
-import Canvas from "./components/Canvas";
 import ColorPicker from "./components/ColorPicker";
-import { Color } from "./types/colors";
+import { Color, Mode } from "./types";
+import CanvasMode from "./components/CanvasMode";
+import Canvas from "./components/Canvas";
 
 
 
 export default function App() {
   const [activeColor, setActiveColor] = useState<Color>('black');
+  const [activeMode, setActiveMode] = useState<Mode>('draw');
 
   return (
     <div>
-      <ColorPicker selectedColor={activeColor} onColorSelect={setActiveColor} />
+      <Canvas gridWidth={15} gridHeight={15} />
+      <div className="flex gap-2 items-center">
+        <CanvasMode activeMode={activeMode} onModeChange={setActiveMode} />
+        <ColorPicker selectedColor={activeColor} onColorSelect={setActiveColor} />  
+      </div>
     </div>
   );
 }

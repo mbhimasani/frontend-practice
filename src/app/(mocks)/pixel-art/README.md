@@ -22,13 +22,12 @@ Requirements
 
   Clarifications I could have asked ->
   - default state for canvas is white/gray patterned grid correct?
-  - default mode is drawing mode?
+  - default mode is drawing mode? let's assume yes
   - what is the default selected color? let's assume Black
   - selecting a new color should not affect previously colored in cells correct?
   - mobile responsive? touch interactions?
   - scope questions -> undo / redo functionality, reset or clear all functionality, color palette popup (accepts user input)
   - canvas state persistence - should canvas state persist across page refreshes or is it okay for drawings to be lost when the user navigates away or refreshes the page?
-  - should Erase mode have the option to reset the entire canvas?
   
   Edge cases to consider:
   - rapid interaction: How should the app handle very fast clicking or dragging that
@@ -36,9 +35,10 @@ might cause performance issues? -> debounce
 
   High Level Architecture:
   - page.tsx
-    - state management for activeColor and mode will live here
+    - state management for color selection and mode selection will live here
   - components
-    - Canvas -> props: gridWidth, gridHeight
+    - Canvas -> props: gridWidth, gridHeight, mode, activeColor
+      - state for Cell data lives here
     - Cell -> props: cellId, color
     - Toolbar
       - Color palette
