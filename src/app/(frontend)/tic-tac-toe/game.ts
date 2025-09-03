@@ -55,12 +55,10 @@ export class TicTacToeGame {
     const isWinningMove = this.checkForWinAtTurn(row, col)
     if (isWinningMove) {
       this.gameState = { state: 'won', winningPlayer: this.currentPlayer }
-      return false;
     }
 
     if (this.isBoardFull()) {
       this.gameState = { state: 'draw' }
-      return false;
     }
     this.updateTurn();
     return true;
@@ -134,11 +132,11 @@ export class TicTacToeGame {
     return this.currentPlayer;
   }
 
-  isGameOver(): boolean {
-    return this.gameState.state !== 'playing'
-  }
-
   private isBoardFull(): boolean {
     return this.board.flat().every(cell => cell !== null);
+  }
+
+  getGameResult() {
+    return this.gameState
   }
 }

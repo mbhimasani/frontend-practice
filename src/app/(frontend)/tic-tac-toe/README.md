@@ -30,4 +30,8 @@ Core functionality:
   - stop game if board is full (draw)
   - toggle turn state
 - get game result 
+
+Testing strategies:
+Mocha unit tests for testing the tic-tac-toe class
+Playwright for end-to-end testing -> ensure that app works as expected from a user perspective
 -->
