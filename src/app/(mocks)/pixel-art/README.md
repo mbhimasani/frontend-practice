@@ -39,7 +39,7 @@ might cause performance issues? -> debounce
   - components
     - Canvas -> props: gridWidth, gridHeight, mode, activeColor
       - state for Cell data lives here
-    - Cell -> props: cellId, color
+    - Cell -> props: id, color, onClick
     - Toolbar
       - Color palette
       - Canvas mode toggle

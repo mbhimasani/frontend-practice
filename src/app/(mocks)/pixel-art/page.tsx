@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div>
-      <Canvas gridWidth={15} gridHeight={15} />
+      <Canvas gridWidth={15} gridHeight={15} activeMode={activeMode} activeColor={activeColor} />
       <div className="flex gap-2 items-center">
         <CanvasMode activeMode={activeMode} onModeChange={setActiveMode} />
         <ColorPicker selectedColor={activeColor} onColorSelect={setActiveColor} />  

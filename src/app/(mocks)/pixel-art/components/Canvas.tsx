@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react"
 import Cell from "./Cell"
-import { Color, COLORS, Mode } from "../types"
+import { Color, Mode } from "../types"
 
 type CanvasProps = {
   gridWidth: number
   gridHeight: number
+  activeMode: Mode
+  activeColor: Color
 }
 type Cell = {
   id: number
   color: Color
 }
 
-export default function Canvas({ gridWidth, gridHeight }: CanvasProps) {
+export default function Canvas({ gridWidth, gridHeight, activeMode, activeColor }: CanvasProps) {
   const [grid, setGrid] = useState<Cell[]>([])
 
   useEffect(() => {
@@ -32,6 +34,16 @@ export default function Canvas({ gridWidth, gridHeight }: CanvasProps) {
           key={cell.id} 
           id={cell.id} 
           color={cell.color} 
+          onClick={() => {
+            setGrid(
+              grid.map((c) => 
+                (c.id === cell.id) ? { ...c, 
+                  color: (activeMode === 'draw') ? 
+                  activeColor : 
+                  (c.id % 2 === 1) ? 'gray' : 'white' 
+                } : c)
+            )
+          }}
         />
       ))}
     </div>
